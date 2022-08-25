@@ -81,7 +81,7 @@ public class Main {
             try {
                 throw new IOException();
             } catch (IOException e) {
-                System.out.println("Некорректное выражение");
+                System.out.println("Более одного знака действия");
                 return "ошибка";
             }
         }
@@ -102,11 +102,11 @@ public class Main {
             if (isRoman) {
                 a = converter.romanToInt(data[0]);
                 b = converter.romanToInt(data[1]);
-                if (b > a ) {
+                if (b > a && actionIndex == 1 ) {
                     try {
                         throw new IOException();
                     } catch (IOException e) {
-                        System.out.println("Некорректное выражение");
+                        System.out.println("Второе число больше первого");
                         return "ошибка";
                     }
                 }
@@ -118,7 +118,7 @@ public class Main {
                 try {
                     throw new IOException();
                 } catch (IOException e) {
-                    System.out.println("Некорректное выражение");
+                    System.out.println("Введённые значения меньше 0 или больше 10");
                     return "ошибка";
                 }
             }
@@ -146,3 +146,4 @@ public class Main {
         return input = "Вычислено";
     }
 }
+
